@@ -1,0 +1,8 @@
+<% if @products.empty? %>
+	No Products Found 
+<% else %>
+    <% @products.each do |product| %>
+	<br>
+        <%= link_to product.name, product %>
+    <% end %>
+<% end %>

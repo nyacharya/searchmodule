@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Suggestions</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<script>
+    $( document ).ready(function() {
+    $( "#search" ).keyup(function(e) {
+    var prod = $('#search').val();
+    if (e.keyCode>64 & e.keyCode <91)
+    {
+    // alert(e.keyCode);
+
+    $.ajax('search?search='+prod,{
+      // success: function(response){
+
+      //   }
+      });
+  }
+});
+});
+
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
